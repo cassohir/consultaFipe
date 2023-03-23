@@ -11,7 +11,7 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      brand: "#8257e6",
+      brand: "#32B2A9",
       white: "#fff",
       gray900: "#121214",
       gray800: "#202024",

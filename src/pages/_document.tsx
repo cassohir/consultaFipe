@@ -15,8 +15,11 @@ export default function Default() {
           href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"
         />
-
-        <style
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+       <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />

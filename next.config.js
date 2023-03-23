@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
 
-  images: {
-    domains: ["files.stripe.com"],
-  },
+const withTM = require('next-transpile-modules')([
+  '@mui/material',
+  '@mui/system',
+  '@mui/icons-material', 
+]);
 
-  experimental: {
-    newNextLinkBehavior: true,
-    images: {
-      allowFutureImage: true,
-    },
-  },
-};
+module.exports = withTM({
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@mui/styled-engine': '@mui/styled-engine-sc',
+    };
+    return config;
+  }
+});
 
-module.exports = nextConfig;
