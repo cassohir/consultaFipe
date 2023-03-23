@@ -5,7 +5,7 @@ import { HomeContainer  } from "../styles/pages/home";
 import {  SearchCarProvider } from "../contexts/SearchFIPE";
 import { Form } from "../components/Form";
 import {  useState } from "react";
-import Result from "../components/result";
+import Result from "../components/Result";
 import { ResultProps } from "../contexts/interface";
 
 
@@ -32,9 +32,7 @@ export default function Home() {
             <Form onDataChanged={setFipeResult} />
             ) : (
             <Result {...resultado} />
-              /*  </> <StyledButton onClick={setIsLoaded(false)}>Voltar</StyledButton> <> */
-            )
-          }  
+          )}  
         </HomeContainer>
       </SearchCarProvider>
   );

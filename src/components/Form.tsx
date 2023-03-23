@@ -1,7 +1,7 @@
 
 import React, { useState, useContext, useEffect } from 'react';
 import {  SearchCarContext } from '../contexts/SearchFIPE';
-import { FormContainer, FormLink, FormWrapper, Option, SelectContainer, StyledButton } from '../styles/components/form';
+import { FormContainer, FormLink, FormWrapper, HeaderContainer, MainContainer, Option, SelectContainer, StyledButton } from '../styles/components/form';
 import  { SelectChangeEvent } from '@mui/material/Select';
 import { ResultProps } from '../contexts/interface';
 import { InputLabel } from '@mui/material';
@@ -43,67 +43,26 @@ export function Form({ onDataChanged}: Props) {
   };
   
   return (
-
-    <FormWrapper>
+    <MainContainer>
+    <HeaderContainer>
     <h1>Tabela Fipe</h1>
     <h3>Consulte o valor de um veículo forma gratuita</h3>
+    </HeaderContainer> 
+    <FormWrapper>
     <FormContainer onSubmit={handleSubmit}>
 
-{/* 
       <MuiSelect title="Marca" value={marca} method={handleChangeMarca} options={marcas} />
       <MuiSelect title="Modelo" value={modelo} method={handleChangeModelo} options={modelos} />
 
-      <InputLabel id="labelMarca">Marca</InputLabel>
- */}  
-      <SelectContainer
-          id="Marca"
-          labelId="labelMarca"
-          value={marca}
-          label="Marca"
-          onChange={handleChangeMarca}
-          >
-            {marcas.map((marca, key) =>{
-              return (
-                <Option key= {key} value={marca.codigo}>{marca.nome}</Option>
-            )})}
-      </SelectContainer>
+      { anos.length > 0  && (
+      <MuiSelect title="Ano" value={ano} method={handleChangeAno} options={anos} />
+      )}
 
-      <SelectContainer
-          id="Modelo"
-       
-          value={modelo}
-          label="Modelo"
-          onChange={handleChangeModelo}
-          >
-          {modelos?.length > 0 && modelos.map((modelo, key) => (
-              <Option key={key} value={modelo.codigo}>
-              {modelo.nome}
-              </Option>))}
-      </SelectContainer>
-    
-        { anos.length > 0  && (
-          
-      <SelectContainer
-          id="Ano"
-          value={ano}
-          label="Ano"
-          onChange={handleChangeAno}
-        >
-          {anos?.map((ano, key) => (
-            <Option key={key} value={ano.codigo}>
-             {ano.nome}
-            </Option>
-      ))}
-      </SelectContainer> 
-      /*  
-      <MuiSelect title="Ano" value={anos} method={handleChangeAno} options={anos} />
-      */
-      ) 
-      }
       <StyledButton type="submit" disabled={isDisabled} onClick={handleSubmit}>
           Consultar preço
       </StyledButton>
     </FormContainer>
     </FormWrapper>
+    </MainContainer>
   );
 }
