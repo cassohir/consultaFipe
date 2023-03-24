@@ -3,6 +3,9 @@ import Button from '@mui/material/Button';
 import { MenuItem, Select } from '@mui/material';
 
 
+
+
+
 export const FormWrapper = styled.div`
 display: flex;
 border-radius: 8px;
@@ -37,6 +40,7 @@ export const Option = styled(MenuItem)`
 
 export const SelectContainer = styled(Select)`
   width: 25rem;    
+  background: white;
 `;
 
 export const StyledButton = styled(Button)`
@@ -44,11 +48,11 @@ export const StyledButton = styled(Button)`
   font-weight: bold;
   width: 10rem;
   background-color: #0069d9;
-  transition: 0.5s;
+  transition: 0.3s;
   margin-bottom: 1rem;
   color: #fff;
   &:hover {
-    backgroun-color: #0069ea;
+    
   }
   &:disabled {
     background-color: rgba(0,0,0,0.3);

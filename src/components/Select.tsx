@@ -12,7 +12,7 @@ interface MuiSelectProps {
 export const MuiSelect = ({title, value, method, options}: MuiSelectProps) => {
     return (
 
-        <FormControl sx={{}}>
+        <FormControl variant="filled" fullWidth sx={{}} >
             <InputLabel id={`${title}inputId`}>{title}</InputLabel>
             <SelectContainer
                 label={title}

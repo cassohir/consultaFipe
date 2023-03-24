@@ -58,7 +58,7 @@ export function Form({ onDataChanged}: Props) {
       <MuiSelect title="Ano" value={ano} method={handleChangeAno} options={anos} />
       )}
 
-      <StyledButton type="submit" disabled={isDisabled} onClick={handleSubmit}>
+      <StyledButton color="success" type="submit" disabled={isDisabled} onClick={handleSubmit}>
           Consultar preço
       </StyledButton>
     </FormContainer>
